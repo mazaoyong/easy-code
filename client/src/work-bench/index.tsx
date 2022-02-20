@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Button } from 'zent';
+import { Button, Notify } from 'zent';
 import MuiIcon from '@components/mui-icons'
 import { COMPONENTS_CONFIG } from './constants'
 import DragContainer from './blocks/drag-container'
@@ -7,6 +7,7 @@ import ActionBar from './blocks/action-bar'
 import { v4 as uuidv4 } from 'uuid';
 import './style.scss'
 import { IDrageItem } from './types';
+import axios from 'axios';
 
 const WorkBench: React.FC = () => {
   const [schema, setSchema] = useState<IDrageItem[]>([]);
@@ -57,6 +58,17 @@ const WorkBench: React.FC = () => {
     }))
   }, [schema])
 
+  // 生成代码
+  const handleGenCode = useCallback(() => {
+    axios.post('/demo', { schema })
+      .then(() => {
+        Notify.success('生成代码完成')
+      })
+      .catch(() => {
+        Notify.error('生成代码失败')
+      })
+  }, [schema])
+
   return (
     <div className="work-bench">
       <div className="wb-left">
@@ -85,7 +97,10 @@ const WorkBench: React.FC = () => {
         }
       </div>
       <div className="wb-center">
-        <div className="wc-title">工作台</div>
+        <div className="wc-title">
+          <span>工作台</span>
+          <Button type="primary" onClick={handleGenCode}>生成代码</Button>
+        </div>
         <div className="wc-container">
           <div className="wc-main">
             <DragContainer

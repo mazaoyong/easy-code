@@ -3,7 +3,7 @@ import transformApiResponse from './transformer/api-response';
 import { Notify } from 'zent';
 // import { getData } from '[module]/api';
 // TODO 在module层级创建api目录并引用对应接口方法
-const getData: any = () => {};
+const getData: any = () => ({});
 
 import { EasyFormX } from '@youzan/ebiz-components/es/types/easy-form-x';
 

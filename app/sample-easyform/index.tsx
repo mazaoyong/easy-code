@@ -3,7 +3,7 @@ import React from 'react';
 import { EasyFormX } from '@youzan/ebiz-components';
 import { useSchemaConfig } from './config/schema-config';
 
-import styles from './styles.module.scss';
+import styles from './styles.m.scss';
 import { Button } from 'zent';
 import { useHandleSubmit } from './config/submit';
 import { EasyFormX as EasyFormXInstance } from '@youzan/ebiz-components/es/types/easy-form-x';
@@ -34,16 +34,6 @@ const App: React.FC = () => {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <Button
-          type="primary"
-          icon="share"
-          target="_blank"
-          href="https://fedoc.qima-inc.com/fe-edu/docs/app-guide/wsc-pc-vis/patterns/form-page"
-        >
-          开发模式
-        </Button>
-      </header>
       <section className={styles.form}>
         <EasyFormX schema={schemaConfig} ref={formRef} onSubmit={handleSubmit}>
           <footer className={styles.footer}>

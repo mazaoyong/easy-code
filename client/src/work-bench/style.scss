@@ -35,6 +35,10 @@ $asideWidth: 248px;
     .wc-title {
       border-bottom: $borderStyle;
       padding: 16px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .wc-container {
       background: #f7f8fa;

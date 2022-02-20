@@ -1,8 +1,7 @@
 import React from 'react';
 import { IEasyFormXSchema } from '@youzan/ebiz-components/es/types/easy-form-x';
 import { FormInputField, FormNumberInputField } from 'zent';
-import Preview from '../components/preview';
-import styles from '../styles.module.scss';
+import styles from '../styles.m.scss';
 
 export const useSchemaConfig = () => {
   return React.useMemo<IEasyFormXSchema[]>(
@@ -30,11 +29,7 @@ export const useSchemaConfig = () => {
           callback: (_form, _patch) => {},
           deps: ['name'],
         },
-      },
-      {
-        type: 'preview',
-        component: Preview,
-      },
+      }
     ],
     [],
   );

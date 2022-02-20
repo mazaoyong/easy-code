@@ -3,3 +3,6 @@ dev:
 
 build:
 	cd client && yarn build
+	
+qa-server:
+	node app/src/service.js
