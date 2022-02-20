@@ -5,6 +5,9 @@ const path = require('path');
 const bodyParser = require('koa-bodyparser');
 const Router = require('koa-router');
 const router = new Router();
+const genSchema = require('./gen-schema');
+const fs = require('fs')
+const ncp = require('ncp').ncp;
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods())
 router.post('/demo', async ctx => {
@@ -42,6 +45,12 @@ router.post('/demo', async ctx => {
       placeholder: ''
     }
   ]
+  const source = path.join(__dirname, '../sample-easyform');
+  const dest = '/Users/mazaoyong/Desktop/project/wsc-pc-vis/client/pages/edu-admin/educlass/containers/sample-easyform'
+  ncp(source, dest, err => {
+    console.log(err)
+  });
+  console.log(222, genSchema(schema))
   ctx.body = 'Hello Router';
 })
 

@@ -338,6 +338,11 @@ ms@^2.1.1:
   resolved "http://registry.npm.qima-inc.com/ms/download/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha1-V0yBOM4dK1hh8LRFedut1gxmFbI=
 
+ncp@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.qima-inc.com/ncp/download/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
+  integrity sha1-GVoh1sRuNh0vsSgbo4uR6d9727M=
+
 negotiator@0.6.3:
   version "0.6.3"
   resolved "http://registry.npm.qima-inc.com/negotiator/download/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
